@@ -1,0 +1,33 @@
+body {
+    padding: 0;
+    text-align: center;
+    background-image: url("images/fundo2.png");
+    font-family: fantasy;
+  }
+  
+  .game-intro {
+    padding: 0% 10%;
+    float: left;
+  }
+  
+  .game-intro p {
+    font-size: 18px;
+    color: white;
+  }
+  
+  .logo-img {
+    width: 350px;
+  }
+  
+  #score-board{
+    color: white;
+  }
+  
+  #game-board {
+    float: right;
+    padding: 20px 0px;
+    align-items: center;
+    margin-top: 0%;
+  }
+
+  
