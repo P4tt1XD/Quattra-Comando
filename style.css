@@ -4,6 +4,10 @@ body {
     background-image: url("images/fundo2.png");
     font-family: fantasy;
   }
+
+  .game-plot{
+    background-color: transparent;
+  }
   
   .game-intro {
     padding: 0% 10%;
@@ -14,14 +18,20 @@ body {
     font-size: 18px;
     color: white;
   }
+
   
   .logo-img {
-    width: 350px;
+    width: 500px;
   }
   
   #score-board{
     color: white;
   }
+
+  body button{
+    background-color: transparent;
+  }
+  
   
   #game-board {
     float: right;

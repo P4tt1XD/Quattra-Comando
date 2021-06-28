@@ -36,7 +36,6 @@ window.onload = () => {
         showScore();
         clearCanvas();
         background.draw();
-        enemy.draw();
         player.draw();
         const crash = updateObstacles();
         if(!crash){
@@ -65,7 +64,7 @@ window.onload = () => {
       ctx.fillStyle = 'black';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = 'red';
-      ctx.fillText = ('End of Mission!!!', 210, 300);
+      ctx.fillText = ("End of Mission!!!", 210, 300);
     }
 
     class Background{
@@ -152,37 +151,7 @@ window.onload = () => {
 
    const player = new Nave("./images/nave.png", 210, 400, 100, 160);
 
-   class Enemy{
-    constructor(source, x, y, w, h){
-      this.posX = Math.floor(Math.random() * (320 - 50));
-      this.posY = - 50;
-      this.width = w;
-      this.height = h;
-      this.speed = 10;
-
-      const img = new Image();
-      img.src = source;
-      img.onload = () => {
-        this.img = img;
-      };
-    }
-    draw(){
-      ctx.drawImage(this.img, this.posX, this.posY, this.width, this.height);
-    }
-
-  checkCollision(player){
-    return !(
-    this.top() > player.bottom()  ||
-     this.bottom() < player.top() || 
-     this.left() > player.right() || 
-     this.right() < player.left()
-     );
-   }
-  }
-
- const enemy = new Enemy("./images/enemy.png", 210, 400, 100, 160);
-
- class Obstacle{
+class Obstacle{
     constructor (x, w){
       this.posX = x;
       this.posY = 0;
