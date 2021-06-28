@@ -64,7 +64,7 @@ window.onload = () => {
       ctx.fillStyle = 'black';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = 'red';
-      ctx.fillText = ("End of Mission!!!", 210, 300);
+      ctx.fillText("End of Mission!!!", 210, 300);
     }
 
     class Background{
@@ -159,6 +159,11 @@ class Obstacle{
       this.height = 60;
       this.speed = 5;
     }
+      const img = new Image();
+        img.src = source;
+        img.onload = () => {
+          this.img = img;
+        };
 
     draw(){
     ctx.fillStyle = "black";
@@ -215,3 +220,4 @@ class Obstacle{
     }
   }
 };
+     const obs = new Background("./images/enemy.png");
