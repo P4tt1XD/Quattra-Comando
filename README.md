@@ -2,7 +2,7 @@
 (MODULE 1, PROJECT)
 Final project from first module from Web Developer from Ironhack, my first project, was a RPG but, due the time, I would need make some changes, and in this, this project was born.
 
-![Preview](images/Preview.png )
+![Preview](images/Preview.PNG )
 
 <H1>INTRODUCTION</H1>
 The name is a single tribute to a game from DOE Entertainment that I played when a child, and just loved it.
