@@ -63,6 +63,8 @@ window.onload = () => {
       clearCanvas();
       ctx.fillStyle = 'black';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.font = "30px fantasy";
+      ctx.textAlign = "center";
       ctx.fillStyle = 'red';
       ctx.fillText("End of Mission!!!", 210, 300);
     }
@@ -158,16 +160,19 @@ class Obstacle{
       this.width = w;
       this.height = 60;
       this.speed = 5;
-    }
-      const img = new Image();
-        img.src = source;
-        img.onload = () => {
-          this.img = img;
-        };
+     }
 
     draw(){
-    ctx.fillStyle = "black";
-    ctx.fillRect(this.posX, this.posY, this.width, this.height);
+      this.enemyImg = new Image();
+      this.enemyImg.src = "./images/enemy.png";
+      ctx.drawImage(this.enemyImg, this.x, this.y, this.width, this.height);
+      
+  
+      this.bossImg = new Image();
+      this.bossImg.src = "./images/enemy2.png";
+      ctx.drawImage(this.bossImg, this.x, this.y, this.width + 20, this.height + 20);
+      console.log("enemy in area!!!");
+    
   }
     move(){
         this.posY += this.speed;
@@ -214,10 +219,11 @@ class Obstacle{
         if(player.checkCollision(obstacles[i])){
             return true;
         }
+        
     }
     if(frame % 90 === 0){
       createObstacle();
     }
   }
 };
-     const obs = new Background("./images/enemy.png");
+    
