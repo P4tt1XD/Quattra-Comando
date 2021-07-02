@@ -51,7 +51,6 @@ window.onload = () => {
     }
 
     function stopGame(){
-      console.log("stop!", animationId);
       cancelAnimationFrame(animationId);
     }
 
@@ -160,20 +159,16 @@ class Obstacle{
       this.width = w;
       this.height = 60;
       this.speed = 5;
-     }
+    }
 
     draw(){
-      this.enemyImg = new Image();
-      this.enemyImg.src = "./images/enemy.png";
-      ctx.drawImage(this.enemyImg, this.x, this.y, this.width, this.height);
-      
+      const enemyImg = new Image();
+      enemyImg.src = "./images/enemy2.png";
+      enemyImg.onload = function(){
+      ctx.drawImage(enemyImg, this.x, this.y, 150, 150);
+      }
+    }
   
-      this.bossImg = new Image();
-      this.bossImg.src = "./images/enemy2.png";
-      ctx.drawImage(this.bossImg, this.x, this.y, this.width + 20, this.height + 20);
-      console.log("enemy in area!!!");
-    
-  }
     move(){
         this.posY += this.speed;
     }
@@ -195,6 +190,7 @@ class Obstacle{
   }
   
   const obstacles = [];
+  
 
   function createObstacle(){
     const minWidth = player.width;
