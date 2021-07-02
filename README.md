@@ -13,3 +13,7 @@ I just hope that you all like this, good play, cadets!
 It's very simple fly with your ship, you just need:
 <li>A to left</li>
 <li>D to right</li>
+
+<H1> CONTRIBUITIONS</H1>
+this is a free software, feel free to colaborate...
+And have fun!!!!
