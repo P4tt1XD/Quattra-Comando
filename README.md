@@ -15,7 +15,7 @@ It's very simple fly with your ship, you just need:
 <li>D to right</li>
 
 <H1> CONTRIBUITIONS</H1>
-this is a free software, feel free to colaborate...
+This is a free software, feel free to colaborate...
 And have fun!!!!
 
 <li> Fork it </li>
