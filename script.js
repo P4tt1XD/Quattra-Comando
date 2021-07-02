@@ -1,3 +1,8 @@
+// Estrutura do jogo OK
+//Fundo OK
+//player OK
+
+
 window.onload = () => {
   document.getElementById("start-button").onclick = () => {
     startGame();
@@ -37,7 +42,7 @@ window.onload = () => {
         clearCanvas();
         background.draw();
         player.draw();
-        const crash = updateObstacles();
+        const crash = updateEnemies();
         if(!crash){
           animationId = requestAnimationFrame(updateCanvas);
         }else{
@@ -140,33 +145,35 @@ window.onload = () => {
       }
     }
 
-    checkCollision(obstacle){
+    checkCollision(enemy){
       return !(
-      this.top() > obstacle.bottom()  ||
-       this.bottom() < obstacle.top() || 
-       this.left() > obstacle.right() || 
-       this.right() < obstacle.left()
+       this.top() > enemy.bottom()  ||
+       this.bottom() < enemy.top() || 
+       this.left() > enemy.right() || 
+       this.right() < enemy.left()
        );
      }
     }
 
    const player = new Nave("./images/nave.png", 210, 400, 100, 160);
 
-class Obstacle{
-    constructor (x, w){
+   class Enemy{
+    constructor(source, x, y, w, h){
       this.posX = x;
       this.posY = 0;
       this.width = w;
-      this.height = 60;
-      this.speed = 5;
+      this.height = h;
+      this.speed = 10;
+
+      const img = new Image();
+      img.src = source;
+      img.onload = () => {
+        this.img = img;
+      };
     }
 
     draw(){
-      const enemyImg = new Image();
-      enemyImg.src = "./images/enemy2.png";
-      enemyImg.onload = function(){
-      ctx.drawImage(enemyImg, this.x, this.y, 150, 150);
-      }
+      ctx.drawImage(this.img, this.posX, this.posY, this.width, this.height);
     }
   
     move(){
@@ -188,37 +195,34 @@ class Obstacle{
       return this.posX + this.width;
     }
   }
-  
-  const obstacles = [];
-  
 
-  function createObstacle(){
+  const enemies = [];
+  
+  function createEnemy(){
     const minWidth = player.width;
     const maxWidth = marginRight - marginLeft - player.width - 20;
-
     const width = Math.floor(Math.random() * (maxWidth - minWidth)) + minWidth;
-
     const posX = Math.floor(Math.random() * maxWidth) + marginLeft;
-
-    const obstacle = new Obstacle(posX, width);
-    obstacles.push(obstacle);
+    const enemy = new Enemy(posX, width);
+    enemies.push(new Enemy('./images/enemy2.png', posX, width, 150, 150));
   }
 
-  function updateObstacles(){
-    for(let i = 0; i < obstacles.length; i += 1){
-        obstacles[i].move();
-        obstacles[i].draw();
-        if(obstacles[i].posY > canvas.height){
-              obstacles.shift();
+  function updateEnemies(){
+    for(let i = 0; i < enemies.length; i += 1){
+      enemies[i].move();
+      enemies[i].draw();
+        if(enemies[i].posY > canvas.height){
+          enemies.shift();
               score += 1;
         }
-        if(player.checkCollision(obstacles[i])){
+        if(player.checkCollision(enemies[i])){
+          console.log("collision");
             return true;
         }
         
     }
     if(frame % 90 === 0){
-      createObstacle();
+      createEnemy();
     }
   }
 };
