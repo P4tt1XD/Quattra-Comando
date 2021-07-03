@@ -4,6 +4,8 @@ Final project from first module from Web Developer from Ironhack, my first proje
 
 ![Preview](Preview.PNG )
 
+<h2> Play here https://p4tt1xd.github.io/Quattra-Comando/ </h2>
+
 <H1>INTRODUCTION</H1>
 The name is a single tribute to a game from DOE Entertainment that I played when a child, and just loved it.
 Besides RPG theme, I just love a scifi too.
