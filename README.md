@@ -4,7 +4,7 @@ Final project from first module from Web Developer from Ironhack, my first proje
 
 ![Preview](Preview.PNG )
 
-<a href="https://p4tt1xd.github.io/Quattra-Comando"> Play here </a>
+<h1><a href="https://p4tt1xd.github.io/Quattra-Comando"> Play here </a></h1>
 
 <H1>INTRODUCTION</H1>
 The name is a single tribute to a game from DOE Entertainment that I played when a child, and just loved it.
