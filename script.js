@@ -208,13 +208,14 @@ window.onload = () => {
   }
 
   function updateEnemies(){
+     for(let i = 0; i < enemies.length; i += 1){
+      enemies[i].move();
+      enemies[i].draw();
+     }
     if(enemies[i].posY > canvas.height){
           enemies.shift();
               score += 1;
-    for(let i = 0; i < enemies.length; i += 1){
-      enemies[i].move();
-      enemies[i].draw();
-        }
+    }
         if(player.checkCollision(enemies[i])){
           console.log("collision");
             return true;
