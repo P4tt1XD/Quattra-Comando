@@ -217,7 +217,6 @@ window.onload = () => {
               score += 1;
     }
         if(player.checkCollision(enemies[i])){
-          console.log("collision");
             return true;
         }
         
