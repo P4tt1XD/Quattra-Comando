@@ -224,6 +224,6 @@ window.onload = () => {
     if(frame % 90 === 0){
       createEnemy();
     }
- 
+  }
 };
     
