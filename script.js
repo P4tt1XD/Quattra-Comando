@@ -211,7 +211,7 @@ window.onload = () => {
      for(let i = 0; i < enemies.length; i += 1){
       enemies[i].move();
       enemies[i].draw();
-     }
+     
     if(enemies[i].posY > canvas.height){
           enemies.shift();
               score += 1;
